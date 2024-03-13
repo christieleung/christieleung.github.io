@@ -1,0 +1,126 @@
+* { 
+    box-sizing: border-box;
+  }
+
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    scale: 70%;
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    padding: 1em;
+    margin: 2em;
+    font-size: 14px;
+
+}
+
+h1 {
+    font-size: 2.1em;
+    margin: 1em 0;
+    color: pink;
+}
+
+.black {
+    color: black;
+}
+
+
+.figmaheader {
+    margin-top: 3.5em;
+    text-align: center;
+}
+
+
+img {
+    max-width: 70%;
+    margin: 2.5em 2em;
+}
+
+.mobileimg {
+    max-width: 23%;
+}
+
+.deskwire {
+   max-width: 75%;
+}
+
+.mbwire {
+    max-width: 57%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.scale {
+    transform: scale(1);
+} 
+
+.scale:hover{
+    transform: scale(1.1);
+    border: pink 0.25em dotted;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+.box {
+    max-width: 80vw;
+    padding: 2.5em 6em;
+    background-color: rgb(244, 203, 209);
+    margin: 2em auto;
+    margin-bottom: 4em;
+    text-align: justify;
+    border: black 0.25em dotted;
+}
+
+.box2 {
+    max-width: 65vw;
+    padding: 3em 3em;
+    background-color: rgb(244, 203, 209);
+    margin: 2em auto;
+    margin-bottom: 5em;
+    text-align: justify;
+}
+
+
+p {
+    line-height: 150%;
+    text-indent: 7%;
+}
+
+.bib {
+    text-align: left;
+}
+
+
+.logo {
+    max-width: 30%;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+header {
+    max-width: 76%;
+    margin: auto;
+    margin-bottom: 1.5em;
+}
