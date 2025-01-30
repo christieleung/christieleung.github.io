@@ -1,0 +1,47 @@
+* {
+ box-sizing: border-box;
+}
+
+body {
+    margin: 1em;
+    background-color: #FFFEF2;
+}
+
+.ladybug {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 95vh;
+}
+
+.ladybug img {
+    width: 19%;
+}
+
+p {
+    margin-top: 1.5em;
+    font-family: silkscreen;
+    font-size: 1.5em;
+    color: darkred;
+}
+
+.change-color {
+    color: lightpink;
+}
+
+.start-bouncing {
+    animation: bounce 1.2s ease-in-out;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-10em);
+    }
+
+    40% {
+        transform: none;
+    }
+}
+
+/* keyframes code edited from: https://www.youtube.com/watch?v=08HgVTY8b4U */
