@@ -20,7 +20,7 @@ div.cat, div.food {
 }
 
 .cat img {
-    width: 33vw;
+    width: 32vw;
 }
    
 .food img {
@@ -37,12 +37,12 @@ div.cat, div.food {
 
 #displayName {
     margin-top: 1em;
-    margin-bottom: 3em;
+    margin-bottom: 2.7em;
     font-size: large;
 }
 
 section.feed {
-    margin-top: 2.5em;
+    margin-top: 2em;
 }
 .feed {
     display: flex;
