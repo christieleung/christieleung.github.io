@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+   
+body {
+    margin: 2em;
+    padding: 2em;
+    font-family: silkscreen;
+    font-size: larger;
+    color: #341C02;
+    background-color: #fbdfdf;
+    border: 5px dashed #341C02;
+}
+
+div.cat, div.food {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.cat img {
+    width: 33vw;
+}
+   
+.food img {
+    width: 28vw;
+    margin-left: 1.5em;
+}
+
+
+.name {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+#displayName {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    font-size: large;
+}
+
+section.feed {
+    margin-top: 2.5em;
+}
+.feed {
+    display: flex;
+    justify-content: right;
+}
+
+
+#displayFood {
+    display: flex;
+    justify-content: right;
+    margin-top: 1em;
+    font-size: medium;
+}
+
+#showPoints {
+    text-align: right;
+    margin-top: 0.5em;
+    font-size: medium;
+}
