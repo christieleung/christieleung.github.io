@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-page="scissors">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixies' Closet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  
+  <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="icon" href="img/big_button.png" />
+  <script src="javascript/script.js"></script>
+</head>
+
+<body>
+
+  <article class="jeans">
+    <div class="jeans_hem">
+      <img id="jeansImage" src="img/jeans_long.png" alt="" />
+    </div>
+  </article>
+
+  <div class="next_button">
+    <a href="mila_jeans_frayed.html">
+      <img class="pink" src="img/next_btn_white.png" alt="" data-hover="img/next_btn_pink.png"
+        data-original="img/next_btn_white.png" />
+    </a>
+  </div>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hover effect for the button
+    const button = document.querySelector("[data-hover]");
+
+    if (button) {
+      button.addEventListener("mouseover", () => {
+        button.src = button.dataset.hover;
+      });
+
+      button.addEventListener("mouseout", () => {
+        button.src = button.dataset.original;
+      });
+    }
+
+    //  instructions pop up
+    document.addEventListener("DOMContentLoaded", function () {
+      const popup = document.getElementById("popup");
+
+      // Close popup when clicking outside the content
+      popup.addEventListener("click", function (event) {
+        if (event.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+    });
+
+    // Swipe-to-Cut Interaction
+    const jeansInteraction = {
+      isMouseDown: false,
+      startX: null,
+      imageLeft: 0,
+      imageRight: 0,
+      jeansImage: document.getElementById("jeansImage"),
+      frayedImageSrc: "img/jeans_frayed.png",
+      originalImageSrc: "img/jeans_long.png",
+
+      init: function () {
+        document.addEventListener(
+          "mousedown",
+          this.mouseDownHandler.bind(this)
+        );
+        document.addEventListener(
+          "mousemove",
+          this.mouseMoveHandler.bind(this)
+        );
+        document.addEventListener("mouseup", this.mouseUpHandler.bind(this));
+
+        // Prevent selection/dragging
+        this.jeansImage.addEventListener("dragstart", (e) =>
+          e.preventDefault()
+        );
+        this.jeansImage.style.userSelect = "none"; // Prevents text/image selection
+
+        // Get image boundaries on load and resize
+        this.updateImageBounds();
+        window.addEventListener("resize", this.updateImageBounds.bind(this));
+      },
+
+      updateImageBounds: function () {
+        const rect = this.jeansImage.getBoundingClientRect();
+        this.imageLeft = rect.left;
+        this.imageRight = rect.right;
+      },
+
+      mouseDownHandler: function (event) {
+        this.isMouseDown = true;
+        this.startX = event.clientX;
+      },
+
+      mouseMoveHandler: function (event) {
+        if (!this.isMouseDown) return;
+
+        const mouseX = event.clientX;
+
+        if (this.startX < this.imageLeft && mouseX >= this.imageRight) {
+          this.jeansImage.src = this.frayedImageSrc;
+        } else if (
+          this.startX > this.imageRight &&
+          mouseX <= this.imageLeft
+        ) {
+          this.jeansImage.src = this.frayedImageSrc;
+        }
+      },
+
+      mouseUpHandler: function () {
+        this.isMouseDown = false;
+      },
+    };
+
+    jeansInteraction.init();
+  });
+</script>
+
+</html>
