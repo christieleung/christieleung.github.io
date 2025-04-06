@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-page="wand">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixies' Closet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="icon" href="img/big_button.png" />
+    <script src="javascript/script.js"></script>
+  </head>
+
+  <body>
+    <nav class="meet">
+      <img
+        class="pink"
+        src="img/pixieforum_btn_white.png"
+        alt=""
+        data-hover="img/pixieforum_btn_pink.png"
+        data-original="img/pixieforum_btn_white.png"
+      />
+    </nav>
+
+    <div id="popup" class="popup">
+      <div class="popup-content-sweater">
+        <img
+          id="popup-image"
+          src="img/forum_popup_mila.png"
+          alt="instructions sweater"
+        />
+      </div>
+    </div>
+    
+    <article class="forum">
+      <div class="arrows_forum">
+        <a href="user3_forum.html">
+          <img src="img/arrows_left.png" alt="" />
+        </a>
+      </div>
+
+      <div class="forum_page">
+        <img src="img/user_1.png" alt="" />
+      </div>
+
+      <div class="arrows_forum">
+        <a href="user2_forum.html">
+          <img src="img/arrows_right.png" alt="" />
+        </a>
+      </div>
+    </article>
+
+    <div class="next_button">
+      <a href="user1_reply.html">
+        <img
+          class="pink"
+          src="img/reply_btn_pink.png"
+          alt=""
+          data-hover="img/reply_btn_pink.png"
+          data-original="img/reply_btn_white.png"
+        />
+      </a>
+    </div>
+
+  </body>
+
+  <script>
+    // hover
+    const pinkButtons = document.querySelectorAll(".pink");
+    pinkButtons.forEach((btn) => {
+      btn.addEventListener("mouseover", () => {
+        btn.src = btn.getAttribute("data-hover");
+      });
+      btn.addEventListener("mouseout", () => {
+        btn.src = btn.getAttribute("data-original");
+      });
+    });
+
+    //  instructions pop up
+    document.addEventListener("DOMContentLoaded", function () {
+      const popup = document.getElementById("popup");
+
+      // Close popup when clicking outside the content
+      popup.addEventListener("click", function (event) {
+        if (event.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+    });
+
+  </script>
+</html>
